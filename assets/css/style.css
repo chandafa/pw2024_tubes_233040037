@@ -1,0 +1,46 @@
+* {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* hide arrows for chrome */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* hide arrows firefox*/
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.custom-bg {
+  background-color: #ff9800;
+}
+
+.custom-bg:hover {
+  background-color: #c77802;
+}
+
+.availability-form {
+  margin-top: -50px;
+  z-index: 2;
+  position: relative;
+}
+
+@media screen and (max-width: 575px) {
+  .availability-form {
+    margin-top: 25px;
+    padding: 0 35px;
+  }
+}
+
+::root {
+  --gray: #00796b;
+  --orange: #ff9800;
+}
+
+a span {
+  color: #ff9800;
+}
