@@ -239,45 +239,207 @@
 
     <!-- Lapangan -->
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold">Lapangan tersedia</h2>
-
     <div class="container">
         <div class="row">
+
+            <!-- cards 1 -->
             <div class="col-lg-4 col-md-6 my-3">
-                <!-- cards 1 -->
                 <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
-                    <img src="images/lapangan/2.jpg" class="card-img-top">
+                    <img src="images/lapangan/5.jpg" class="card-img-top">
+
                     <div class="card-body">
                         <h5>Lapangan Bola</h5>
                         <h6 class="mb-4">100Rp/Hari</h6>
                         <div class="features mb-4">
-                            <h6 class="mb-1">Fitur</h6>
-                            <span class="badge rounded-pill bg-warning text-dark mb-3 text-wrap lh-base">
-                                Lapangan Bola
+                            <h6 class="mb-1">Kelebihan</h6>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Lapangan luas
                             </span>
-                            <span class="badge rounded-pill bg-warning text-dark mb-3 text-wrap lh-base">
-                                Bola
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Bersih
                             </span>
-                            <span class="badge rounded-pill bg-warning text-dark mb-3 text-wrap lh-base">
-                                Kiper
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Akses mudah
                             </span>
                         </div>
-                        <ul class="list-unstyled list-inline mb-2">
-                            <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-                            <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-                            <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-                            <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
-                            <li class="list-inline-item"><i class="bi bi-star-half text-warning"></i></li>
-                        </ul>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                        <a href="#" class="btn btn-warning">somewhere</a>
+                        <div class="facilities mb-4">
+                            <h6 class="mb-1">Fasilitas</h6>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Lapangan Tenis
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Stock bola
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Balkon
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Wifi
+                            </span>
+
+                        </div>
+                        <div class="rating mb-4">
+                            <h6 class="mb-1">Rating</h6>
+                            <ul class="list-unstyled list-inline mb-2 badge rounded-pill bg-light">
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item"><i class="bi bi-star-half text-warning"></i></li>
+                            </ul>
+
+                        </div>
+                        <div class="d-flex justify-content-evenly mb-2">
+                            <a href="#" class="btn btn-sm text-white custom-bg shadow-none  ">Pesan Sekarang</a>
+                            <a href="#" class="btn btn-sm text-black btn-outline-warning shadow-none">Detail
+                                lapangan</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <!-- cards 2 -->
+            <div class="col-lg-4 col-md-6 my-3">
+                <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
+                    <img src="images/lapangan/3.jpg" class="card-img-top">
+
+                    <div class="card-body">
+                        <h5>Lapangan Voli</h5>
+                        <h6 class="mb-4">100Rp/Hari</h6>
+                        <div class="features mb-4">
+                            <h6 class="mb-1">Kelebihan</h6>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Lapangan luas
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Bersih
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Akses mudah
+                            </span>
+                        </div>
+                        <div class="facilities mb-4">
+                            <h6 class="mb-1">Fasilitas</h6>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Lapangan Tenis
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Stock bola
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Balkon
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Wifi
+                            </span>
+
+                        </div>
+                        <div class="rating mb-4">
+                            <h6 class="mb-1">Rating</h6>
+                            <ul class="list-unstyled list-inline mb-2 badge rounded-pill bg-light">
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item"><i class="bi bi-star-half text-warning"></i></li>
+                            </ul>
+
+                        </div>
+                        <div class="d-flex justify-content-evenly mb-2">
+                            <a href="#" class="btn btn-sm text-white custom-bg shadow-none  ">Pesan Sekarang</a>
+                            <a href="#" class="btn btn-sm text-black btn-outline-warning shadow-none">Detail
+                                lapangan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- cards 3 -->
+            <div class="col-lg-4 col-md-6 my-3">
+                <div class="card border-0 shadow" style="max-width: 350px; margin: auto;">
+                    <img src="images/lapangan/4.jpg" class="card-img-top">
+
+                    <div class="card-body">
+                        <h5>Lapangan Basket</h5>
+                        <h6 class="mb-4">100Rp/Hari</h6>
+                        <div class="features mb-4">
+                            <h6 class="mb-1">Kelebihan</h6>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Lapangan luas
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Bersih
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Akses mudah
+                            </span>
+                        </div>
+                        <div class="facilities mb-4">
+                            <h6 class="mb-1">Fasilitas</h6>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Lapangan Tenis
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Stock bola
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Balkon
+                            </span>
+                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
+                                Wifi
+                            </span>
+
+                        </div>
+                        <div class="rating mb-4">
+                            <h6 class="mb-1">Rating</h6>
+                            <ul class="list-unstyled list-inline mb-2 badge rounded-pill bg-light">
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item me-0"><i class="bi bi-star-fill text-warning"></i></li>
+                                <li class="list-inline-item"><i class="bi bi-star-half text-warning"></i></li>
+                            </ul>
+
+                        </div>
+                        <div class="d-flex justify-content-evenly mb-2">
+                            <a href="#" class="btn btn-sm text-white custom-bg shadow-none  ">Pesan Sekarang</a>
+                            <a href="#" class="btn btn-sm text-black btn-outline-warning shadow-none">Detail
+                                lapangan</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-lg-12 text-center mt-5">
                 <a href="#" class="btn btn-sm rounded-0 fw-bold shadow-none text-white custom-bg btn-warning">Lapangan
                     Lainnya...
                 </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Fasilitas -->
+    <h2 class="mt-5 pt-4 mb-4 text-center fw-bold">Fasilitas tersedia</h2>
+    <div class="container">
+        <div class="row justify-content-evenly">
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/features/wifi.svg" width="80px">
+                <h5 class="mt-3">Wifi</h5>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/features/balkon.png" width="80px">
+                <h5 class="mt-3">Balkon</h5>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/features/ball.png" width="80px">
+                <h5 class="mt-3">Ball</h5>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/features/drink.png" width="80px">
+                <h5 class="mt-3">Minuman</h5>
+            </div>
+            <div class="col-lg-2 col-md-2 text-center bg-white rounded shadow py-4 my-3">
+                <img src="images/features/lapangan.png" width="80px">
+                <h5 class="mt-3">Lapangan</h5>
             </div>
         </div>
     </div>
