@@ -1,3 +1,13 @@
+:root {
+  --gray: #00796b;
+  --orange: #ff9800;
+  --light-gray: #f5f5f5;
+  --dark-gray: #333;
+  --white: #fff;
+  --black: #000;
+  --hover-orange: #c77802;
+}
+
 * {
   font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
@@ -16,11 +26,11 @@ input[type="number"] {
 }
 
 .custom-bg {
-  background-color: #ff9800;
+  background-color: var(--orange);
 }
 
 .custom-bg:hover {
-  background-color: #c77802;
+  background-color: var(--hover-orange);
 }
 
 .availability-form {
@@ -36,11 +46,18 @@ input[type="number"] {
   }
 }
 
-::root {
-  --gray: #00796b;
-  --orange: #ff9800;
+a span {
+  color: var(--orange);
 }
 
-a span {
-  color: #ff9800;
+.h-line {
+  width: 150px;
+  margin: 0 auto;
+  height: 2px;
+}
+
+.pop:hover {
+  border-top-color: var(--orange) !important;
+  transform: scale(1.03);
+  transition: all 0.3s;
 }
