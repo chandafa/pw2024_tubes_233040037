@@ -13,24 +13,16 @@
   scroll-behavior: smooth;
 }
 
-/* hide arrows for chrome */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* hide arrows firefox*/
-input[type="number"] {
-  -moz-appearance: textfield;
-}
-
 .custom-bg {
   background-color: var(--orange);
 }
 
 .custom-bg:hover {
   background-color: var(--hover-orange);
+}
+
+.custom-bg1 {
+  background-color: var(--orange);
 }
 
 .availability-form {
@@ -44,10 +36,6 @@ input[type="number"] {
     margin-top: 25px;
     padding: 0 35px;
   }
-}
-
-a span {
-  color: var(--orange);
 }
 
 .h-line {
@@ -74,4 +62,18 @@ a span {
   backdrop-filter: blur(15.3px);
   -webkit-backdrop-filter: blur(15.3px);
   /* border: 1px solid rgba(255, 255, 255, 0.87); */
+}
+
+.login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
+
+.custom-alert {
+  position: fixed;
+  top: 25px;
+  right: 25px;
 }

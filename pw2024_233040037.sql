@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2024 at 12:23 PM
+-- Generation Time: May 17, 2024 at 11:34 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,61 +18,47 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `pw2024_2330400377`
+-- Database: `pw2024_233040037`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role`
+-- Table structure for table `admin_cred`
 --
 
-CREATE TABLE `role` (
-  `id_role` int(11) NOT NULL,
-  `role_name` varchar(255) NOT NULL
+CREATE TABLE `admin_cred` (
+  `sr_no` int(11) NOT NULL,
+  `admin_name` varchar(150) NOT NULL,
+  `admin_pass` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `user`
+-- Dumping data for table `admin_cred`
 --
 
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `gambar` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `id_role` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `admin_cred` (`sr_no`, `admin_name`, `admin_pass`) VALUES
+(1, 'candra', 'candra');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `role`
+-- Indexes for table `admin_cred`
 --
-ALTER TABLE `role`
-  ADD PRIMARY KEY (`id_role`);
+ALTER TABLE `admin_cred`
+  ADD PRIMARY KEY (`sr_no`);
 
 --
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_role` (`id_role`);
-
---
--- Constraints for dumped tables
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Constraints for table `user`
+-- AUTO_INCREMENT for table `admin_cred`
 --
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_role`) REFERENCES `role` (`id_role`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `admin_cred`
+  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
