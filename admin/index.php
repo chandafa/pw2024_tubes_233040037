@@ -52,10 +52,10 @@ if ((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
         if ($res->num_rows == 1) {
             $row = mysqli_fetch_assoc($res);
             $_SESSION['adminLogin'] = true;
-            $_SESSION['adminId'] = $row['sr_no'];
+            $_SESSION['adminId'] = $row['id_admin'];
             redirect('dashboard.php');
         } else {
-            alert('error', 'Login failed - Invalid Credentials');
+            alert('error', 'Login failed - Akun tidak ditemukan');
         }
     }
     ?>

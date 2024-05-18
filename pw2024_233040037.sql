@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 17, 2024 at 11:34 AM
+-- Generation Time: May 18, 2024 at 01:14 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin_cred` (
-  `sr_no` int(11) NOT NULL,
+  `id_admin` int(11) NOT NULL,
   `admin_name` varchar(150) NOT NULL,
   `admin_pass` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -37,8 +37,47 @@ CREATE TABLE `admin_cred` (
 -- Dumping data for table `admin_cred`
 --
 
-INSERT INTO `admin_cred` (`sr_no`, `admin_name`, `admin_pass`) VALUES
+INSERT INTO `admin_cred` (`id_admin`, `admin_name`, `admin_pass`) VALUES
 (1, 'candra', 'candra');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carousel`
+--
+
+CREATE TABLE `carousel` (
+  `id_carousel` int(11) NOT NULL,
+  `image` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `carousel`
+--
+
+INSERT INTO `carousel` (`id_carousel`, `image`) VALUES
+(7, 'IMG_26675 .png'),
+(8, 'IMG_21044 .png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
+--
+
+CREATE TABLE `settings` (
+  `id_settings` int(11) NOT NULL,
+  `site_title` varchar(50) NOT NULL,
+  `site_about` varchar(250) NOT NULL,
+  `shutdown` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id_settings`, `site_title`, `site_about`, `shutdown`) VALUES
+(1, 'adfghj', 'rtyu', 0);
 
 --
 -- Indexes for dumped tables
@@ -48,7 +87,19 @@ INSERT INTO `admin_cred` (`sr_no`, `admin_name`, `admin_pass`) VALUES
 -- Indexes for table `admin_cred`
 --
 ALTER TABLE `admin_cred`
-  ADD PRIMARY KEY (`sr_no`);
+  ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indexes for table `carousel`
+--
+ALTER TABLE `carousel`
+  ADD PRIMARY KEY (`id_carousel`);
+
+--
+-- Indexes for table `settings`
+--
+ALTER TABLE `settings`
+  ADD PRIMARY KEY (`id_settings`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -58,7 +109,19 @@ ALTER TABLE `admin_cred`
 -- AUTO_INCREMENT for table `admin_cred`
 --
 ALTER TABLE `admin_cred`
-  MODIFY `sr_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `carousel`
+--
+ALTER TABLE `carousel`
+  MODIFY `id_carousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `settings`
+--
+ALTER TABLE `settings`
+  MODIFY `id_settings` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

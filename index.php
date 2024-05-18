@@ -1,3 +1,9 @@
+<?php
+require('admin/inc/db_config.php'); // Ubah path sesuai dengan lokasi file selectAll_function.php
+require('admin/inc/essentials.php'); // Ubah path sesuai dengan lokasi file constants.php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,24 +26,20 @@
     <div class="container-fluid px-lg-4 mt-4">
         <div class="swiper swiper-container rounded-4">
             <div class="swiper-wrapper ">
-                <div class="swiper-slide">
-                    <img src="images/carousel/1.png" alt="by@unplash" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/2.png" alt="by@unplash" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/3.png" alt="by@unplash" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/4.png" alt="by@unplash" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/5.png" alt="by@unplash" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                    <img src="images/carousel/6.png" alt="by@unplash" class="w-100 d-block" />
-                </div>
+
+                <?php
+
+                $res = selectAll('carousel');
+                while ($row = mysqli_fetch_assoc($res)) {
+                    $path = CAROUSEL_IMG_PATH;
+                    echo <<<data
+                    <div class="swiper-slide">
+                        <img src="$path$row[image]" alt="by@unplash" class="w-100 d-block" />
+                    </div>
+                    data;
+                }
+                ?>
+
             </div>
         </div>
     </div>
@@ -434,6 +436,7 @@
             </div>
         </div>
     </div>
+
 
     <?php require('inc/footer.php'); ?>
 
