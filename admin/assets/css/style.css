@@ -82,6 +82,22 @@
   position: fixed;
   height: 100%;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+/* track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+/* handle */
+::-webkit-scrollbar-thumb {
+  background: #1b0707;
+}
+/* handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #252525;
+}
 
 @media screen and (max-width: 991px) {
   #dashboard-menu {
@@ -96,6 +112,6 @@
 
   .custom-alert {
     position: fixed;
-    top: 135px;
+    top: 35px;
   }
 }

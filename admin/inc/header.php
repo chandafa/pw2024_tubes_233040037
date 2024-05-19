@@ -2,7 +2,10 @@
     <a href="../index.php" class="text-decoration-none">
         <h3 class="mb-0 text-light">Sport Zone</h3>
     </a>
-    <a href="logout.php" class="btn btn-secondary btn-sm fw-semibold">LOGOUT</a>
+    <!-- <a href="logout.php" class="btn btn-secondary btn-sm fw-semibold" id="confirmLogoutButton">LOGOUT</a> -->
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#logoutModal">
+        Logout
+    </button>
 </div>
 
 <div class="col-lg-2 bg-dark border-top border-3 border-secondary z-3" id="dashboard-menu">
@@ -18,10 +21,10 @@
                         <a class="nav-link text-white" href="dashboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Lapangan</a>
+                        <a class="nav-link text-white" href="lapangan.php">Lapangan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Users</a>
+                        <a class="nav-link text-white" href="user_queries.php">User Message</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="carousel.php">Carousel</a>
@@ -35,4 +38,24 @@
             </div>
         </div>
     </nav>
+</div>
+
+
+<!-- Logout Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to logout?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-sm btn-danger" id="confirmLogoutBtn"><a href="logout.php" class="fw-semibold text-decoration-none text-white" id="confirmLogoutButton">Logout</a></button>
+            </div>
+        </div>
+    </div>
 </div>

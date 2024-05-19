@@ -8,6 +8,7 @@
 
     <!-- Include Library -->
     <?php require('inc/links.php') ?>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body class="bg-light">
@@ -60,32 +61,54 @@
 
                 </div>
             </div>
+
+
             <div class="col-lg-6 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4">
-                    <form>
+                    <form method="POST">
                         <h5>Send a message</h5>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Name</label>
-                            <input type="text" class="form-control shadow-none" placeholder="Your name">
+                            <input name="name" required type="text" class="form-control shadow-none" placeholder="Your name">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Email</label>
-                            <input type="email" class="form-control shadow-none" placeholder="Your name">
+                            <input name="email" required type="email" class="form-control shadow-none" placeholder="Your name">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Subject</label>
-                            <input type="text" class="form-control shadow-none" placeholder="Your name">
+                            <input name="subject" required type="text" class="form-control shadow-none" placeholder="Your name">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Message</label>
-                            <textarea class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
+                            <textarea name="message" required class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
                         </div>
-                        <button type="submit" class="btn custom-bg btn-warning text-white shadow-none">Send</button>
+                        <button type="submit" name="send" class="btn custom-bg btn-warning text-white shadow-none">Send</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <?php
+
+    if (isset($_POST['send'])) {
+        $frm_data = filteration($_POST);
+
+        $q = "INSERT INTO `user_queries`(`name`, `email`, `subject`, `message`) VALUES (?, ?, ?, ?)";
+        $values = [$frm_data['name'], $frm_data['email'], $frm_data['subject'], $frm_data['message']];
+
+        $res = insert($q, $values, 'ssss');
+        if ($res == 1) {
+            alert('success', 'Message sent successfully!');
+        } else {
+            alert('error', 'Failed to send message!');
+        }
+    }
+
+    ?>
+
 
     <!-- Footer -->
     <?php require('inc/footer.php'); ?>

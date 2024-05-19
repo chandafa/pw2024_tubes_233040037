@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2024 at 01:14 PM
+-- Generation Time: May 19, 2024 at 08:12 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -57,7 +57,8 @@ CREATE TABLE `carousel` (
 
 INSERT INTO `carousel` (`id_carousel`, `image`) VALUES
 (7, 'IMG_26675 .png'),
-(8, 'IMG_21044 .png');
+(8, 'IMG_21044 .png'),
+(9, 'IMG_38934 .png');
 
 -- --------------------------------------------------------
 
@@ -78,6 +79,22 @@ CREATE TABLE `settings` (
 
 INSERT INTO `settings` (`id_settings`, `site_title`, `site_about`, `shutdown`) VALUES
 (1, 'adfghj', 'rtyu', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_queries`
+--
+
+CREATE TABLE `user_queries` (
+  `id_queries` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `subject` varchar(200) NOT NULL,
+  `message` varchar(500) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp(),
+  `seen` tinyint(4) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -102,6 +119,12 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`id_settings`);
 
 --
+-- Indexes for table `user_queries`
+--
+ALTER TABLE `user_queries`
+  ADD PRIMARY KEY (`id_queries`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -115,13 +138,19 @@ ALTER TABLE `admin_cred`
 -- AUTO_INCREMENT for table `carousel`
 --
 ALTER TABLE `carousel`
-  MODIFY `id_carousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_carousel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id_settings` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `user_queries`
+--
+ALTER TABLE `user_queries`
+  MODIFY `id_queries` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -75,3 +75,29 @@ a span {
   -webkit-backdrop-filter: blur(15.3px);
   /* border: 1px solid rgba(255, 255, 255, 0.87); */
 }
+
+/* CSS untuk navbar */
+#nav-bar a.nav-link {
+  text-decoration: none;
+  color: black; /* Atur warna sesuai kebutuhan */
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+/* CSS untuk garis penanda pada tautan yang aktif */
+#nav-bar a.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Sesuaikan jarak dari bawah teks */
+  width: 100%;
+  height: 2px; /* Ketebalan garis */
+  background-color: red; /* Warna garis */
+}
+
+.custom-alert {
+  position: fixed;
+  top: 80px;
+  right: 25px;
+}

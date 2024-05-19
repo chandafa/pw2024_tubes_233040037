@@ -1,3 +1,28 @@
+<!-- auto close alert -->
+<script>
+// Set a timer to auto close the alert after 5 seconds (5000 milliseconds)
+setTimeout(function() {
+    var alertElement = document.getElementById('autoCloseAlert');
+    var alert = new bootstrap.Alert(alertElement);
+    alert.close();
+}, 3000); // 3000 milliseconds = 3 seconds
+</script>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script>
+document.getElementById('confirmLogoutBtn').addEventListener('click', function() {
+    // Redirect to the logout page or perform logout action here
+    window.location.href = 'logout.php'; // Ganti '/logout' dengan URL logout yang sesuai
+});
+</script>
+</body>
+
+</html>
+
+
 <?php
 
 // frontend
@@ -35,12 +60,14 @@ function alert($type, $msg)
     $bs_class = ($type == "success") ? "alert-success" : "alert-danger";
 
     echo <<<alert
-    <div class="alert $bs_class alert-warning alert-dismissible fade show custom-alert" role="alert">
+    <div class="alert $bs_class alert-warning alert-dismissible fade show custom-alert" role="alert" id="autoCloseAlert">
         <strong class="me-3">$msg</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     alert;
 }
+
+
 
 function uploadImage($image, $folder)
 {

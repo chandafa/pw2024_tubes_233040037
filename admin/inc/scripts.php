@@ -1,8 +1,8 @@
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
 <script>
     function alert(type, msg) {
@@ -17,4 +17,22 @@
 
         document.body.appendChild(element);
     }
+
+    function setActive() {
+        // Dapatkan elemen bilah navigasi dan tautan di dalamnya
+        const navbar = document.getElementById('dashboard-menu');
+        const a_tags = navbar.getElementsByTagName('a');
+
+        // Iterasi melalui setiap tautan
+        for (i = 0; i < a_tags.length; i++) {
+            let file = a_tags[i].href.split('/').pop();
+            let file_name = file.split('.')[0];
+
+            // Periksa apakah nama file sama dengan nama file halaman yang sedang dikunjungi
+            if (document.location.href.indexOf(file_name) >= 0) {
+                a_tags[i].classList.add('active');
+            }
+        }
+    }
+    setActive();
 </script>
