@@ -2,8 +2,6 @@
 
 require('admin/inc/db_config.php');
 require('admin/inc/essentials.php');
-require('user/koneksi.php');
-require('user/login.php');
 
 ?>
 
@@ -52,16 +50,13 @@ require('user/login.php');
                     data-bs-target="#search">
                     <i class="bi bi-search"></i> Search
                 </button>
-
-                <button type="button" class="btn text-white custom-bg btn-warning shadow-none me-2"
-                    data-bs-toggle="modal" data-bs-target="#loginModal">
-                    Login
+                <button type="button" class="btn text-white custom-bg btn-warning shadow-none me-2"> <a
+                        href="user/register.php" class="text-white text-decoration-none">Register</a>
                 </button>
+                <button type="button" class="btn text-white custom-bg btn-warning shadow-none "> <a
+                        href="user/login.php" class="text-white text-decoration-none">Login</a>
 
-                <!-- <button type="button" class="btn text-white custom-bg btn-warning shadow-none " data-bs-toggle="modal"
-                    data-bs-target="#registerModal">
-                    Register
-                </button> -->
+                </button>
             </div>
         </div>
     </div>
@@ -72,34 +67,25 @@ require('user/login.php');
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form class="form-container" action="user/login.php" method="POST">
+            <form>
                 <div class="modal-header">
                     <h5 class="modal-title d-flex align-items-center">
                         <i class="bi bi-person-circle fs-3 me-2"></i> User Login
                     </h5>
-                    <?php if ($error != '') { ?>
-                    <div class="alert alert-danger" role="alert"><?= $error; ?></div>
-                    <?php } ?>
                     <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body ">
-                    <div class="form-group mb-3">
-                        <label for="username">Username</label>
-                        <input required type="text" class="form-control" id="username" name="username"
-                            placeholder="Username">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label mb-2">Email</label>
+                        <input type="email" class="form-control shadow-none" placeholder="Your email">
                     </div>
-                    <div class="form-group mb-4">
-                        <label for="InputPassword">Password</label>
-                        <input required type="password" class="form-control" id="InputPassword" name="password"
-                            placeholder="Password">
-                        <?php if ($validate != '') { ?>
-                        <p class="text-danger"><?= $validate; ?></p>
-                        <?php } ?>
+                    <div class="mb-4">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control shadow-none" placeholder="Your password">
                     </div>
                     <div class="d-flex align-items-center justify-content-between">
-                        <button type="submit" name="submit"
-                            class="btn custom-bg btn-warning text-white shadow-none">Login</button>
+                        <button type="submit" class="btn custom-bg btn-warning text-white shadow-none">Login</button>
 
                         <a href="javascript: void(0)"
                             class="text-warning text-decoration-none link-warning link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Forget
@@ -109,8 +95,9 @@ require('user/login.php');
                     <hr>
                     <label class="form-label mt-2">Belum mempunyai akun?</label>
                     <div class="con-register">
-                        <button type="button" class="btn text-white custom-bg btn-warning shadow-none me-2"> <a
-                                href="user/register.php" class="text-white text-decoration-none">Register</a>
+                        <button type="button" class="btn text-white custom-bg btn-warning shadow-none"
+                            data-bs-toggle="modal" data-bs-target="#registerModal">
+                            Register
                         </button>
                     </div>
                 </div>
@@ -124,55 +111,57 @@ require('user/login.php');
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <form class="form-container" action="user/register.php" method="POST">
-                <h4 class="text-center font-weight-bold"> Sign-Up </h4>
-                <?php if ($error != '') { ?>
-                <div class="alert alert-danger" role="alert"><?= $error; ?></div>
-                <?php } ?>
+            <form id="register-form">
+                <div class="modal-header">
+                    <h5 class="modal-title d-flex align-items-center">
+                        <i class="bi bi-person-lines-fill fs-3 me-2"></i> User Register
+                    </h5>
+                    <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <span class="badge rounded-pill custom-bg text-white mb-3 text-wrap lh-base">
+                        Note : Informasi detail anda akan dijaga kerahasiaannya.
+                    </span>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Nama</label>
+                                <input name="name" type="text" class="form-control shadown-none" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Email</label>
+                                <input name="email" type="email" class="form-control shadown-none" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Password</label>
+                                <input name="pass" type="password" class="form-control shadown-none" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Konfirmasi Password</label>
+                                <input name="cpass" type="password" class="form-control shadown-none" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Profile</label>
+                                <input name="profile" type="file" accept=".jpg, .png, .jpeg, .webp"
+                                    class="form-control shadown-none" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Nomor Telp</label>
+                                <input name="phonenum" type="number" class="form-control shadown-none" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label class="form-label">Alamat</label>
+                                <textarea name="address" class="form-control shadow-none" rows="1" required></textarea>
+                            </div>
 
-                <div class="form-group">
-                    <label for="name">Nama</label>
-                    <input required type="text" class="form-control" id="name" name="name" placeholder="Masukkan Nama">
-                </div>
-                <div class="form-group">
-                    <label for="InputEmail">Email</label>
-                    <input required type="email" class="form-control" id="InputEmail" name="email"
-                        aria-describeby="emailHelp" placeholder="Masukkan email">
-                </div>
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input required type="text" class="form-control" id="username" name="username"
-                        placeholder="Masukkan username" required>
-                </div>
-                <div class="form-group">
-                    <label for="InputPassword">Password</label>
-                    <input required type="password" class="form-control" id="InputPassword" name="password"
-                        placeholder="Password">
-                    <?php if ($validate != '') { ?>
-                    <p class="text-danger"><?= $validate; ?></p>
-                    <?php } ?>
-                </div>
-                <div class="form-group">
-                    <label for="InputPassword">Re-Password</label>
-                    <input required type="password" class="form-control" id="InputRePassword" name="repassword"
-                        placeholder="Re-Password">
-                    <?php if ($validate != '') { ?>
-                    <p class="text-danger"><?= $validate; ?></p>
-                    <?php } ?>
-                </div>
-                <button type="submit" name="submit" class="btn btn-primary btn-block">Register</button>
-                <hr>
-                <label class="form-label mt-2">Sudah mempunyai akun?</label>
-                <div class="con-register">
-                    <button type="button" class="btn text-white custom-bg btn-warning shadow-none"
-                        data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Login
-                    </button>
+                        </div>
+                    </div>
+                    <div class="text-center my-1">
+                        <button type="submit" class="btn text-white btn-warning custom-bg shadow-none">REGISTER</button>
+                    </div>
                 </div>
             </form>
-            <div class="text-center my-1">
-                <button type="submit" class="btn text-white btn-warning custom-bg shadow-none">REGISTER</button>
-            </div>
         </div>
     </div>
 </div>

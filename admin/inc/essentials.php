@@ -34,7 +34,7 @@ define('CAROUSEL_IMG_PATH', SITE_URL . 'images/carousel/');
 define('UPLOAD_IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/git/pw2024_tubes_233040037/images/');
 define('ABOUT_FOLDER', 'about/');
 define('CAROUSEL_FOLDER', 'carousel/');
-
+define('USERS_FOLDER', 'users/');
 
 function adminLogin()
 {
@@ -67,8 +67,6 @@ function alert($type, $msg)
     alert;
 }
 
-
-
 function uploadImage($image, $folder)
 {
     $valid_mime = ['image/jpeg', 'image/png', 'image/webp'];
@@ -97,5 +95,34 @@ function deleteImage($image, $folder)
         return true;
     } else {
         return false;
+    }
+}
+
+function uploadUserImage($image)
+{
+    $valid_mime = ['image/jpeg', 'image/png', 'image/webp'];
+    $img_mime = $image['type'];
+
+    if (!in_array($img_mime, $valid_mime)) {
+        return 'inv_img'; // Invalid image format
+    } else {
+        $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+        $rname = 'IMG_' . random_int(11111, 99999) . '.jpeg'; // Ensure no space between . and jpeg
+
+        $img_path = UPLOAD_IMAGE_PATH . USERS_FOLDER . $rname;
+
+        if ($ext == 'png' || $ext == 'PNG') {
+            $img = imagecreatefrompng($image['tmp_name']);
+        } else if ($ext == 'webp' || $ext == 'WEBP') {
+            $img = imagecreatefromwebp($image['tmp_name']);
+        } else {
+            $img = imagecreatefromjpeg($image['tmp_name']);
+        }
+
+        if (imagejpeg($img, $img_path, 75)) {
+            return $rname;
+        } else {
+            return 'upd_failed'; // Upload failed
+        }
     }
 }

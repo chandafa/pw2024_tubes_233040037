@@ -88,8 +88,6 @@ document.addEventListener("DOMContentLoaded", function () {
     get_general();
 });
 
-
-
 general_s_form.addEventListener("submit", function (e) {
     e.preventDefault();
     upd_general(site_title_inp.value, site_about_inp.value);

@@ -100,4 +100,5 @@ a span {
   position: fixed;
   top: 80px;
   right: 25px;
+  z-index: 1111;
 }

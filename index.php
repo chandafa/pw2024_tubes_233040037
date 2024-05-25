@@ -73,7 +73,7 @@
                             </select>
                         </div>
                         <div class="col-lg-1 mb-lg-3 mt-2 px-lg-1">
-                            <button type="submit" class="btn text-white shadow-none custom-bg">Submit</button>
+                            <button type="submit" class="btn text-white shadow-none bg-warning">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -394,7 +394,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-8 p-4 mb-lg-0 mb-3 bg-white rounded shadow">
-                <iframe class="w-100 rounded" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.20358553266!2d107.59252760000001!3d-6.866190299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7ad402365e9%3A0x720f2e1a52359642!2sFakultas%20Teknik%20Unpas!5e0!3m2!1sen!2sid!4v1715686172804!5m2!1sen!2sid" loading="lazy"></iframe>
+                <iframe class="w-100 rounded" height="320px"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.20358553266!2d107.59252760000001!3d-6.866190299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7ad402365e9%3A0x720f2e1a52359642!2sFakultas%20Teknik%20Unpas!5e0!3m2!1sen!2sid!4v1715686172804!5m2!1sen!2sid"
+                    loading="lazy"></iframe>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="bg-white p-4 rounded mb-4 shadow">
@@ -439,59 +441,59 @@
 
     <!-- Container Swiper -->
     <script type="module">
-        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
-        var swiper = new Swiper(".swiper-container", {
-            spaceBetween: 30,
-            effect: "fade",
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-        });
+    var swiper = new Swiper(".swiper-container", {
+        spaceBetween: 30,
+        effect: "fade",
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+    });
     </script>
 
     <!-- Testimoni Swiper -->
     <script type="module">
-        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
-        var swiper = new Swiper(".swiper-testimonials", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            slidesPerView: "3",
-            loop: true,
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
+    var swiper = new Swiper(".swiper-testimonials", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        slidesPerView: "3",
+        loop: true,
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1,
+
             },
-            pagination: {
-                el: ".swiper-pagination",
+            640: {
+                slidesPerView: 1,
+
             },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
+            768: {
+                slidesPerView: 2,
 
-                },
-                640: {
-                    slidesPerView: 1,
-
-                },
-                768: {
-                    slidesPerView: 2,
-
-                },
-                1024: {
-                    slidesPerView: 3,
-
-                },
             },
-        });
+            1024: {
+                slidesPerView: 3,
+
+            },
+        },
+    });
     </script>
 
     <!-- Local JS -->

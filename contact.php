@@ -28,9 +28,12 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 mb-5 px-4">
                 <div class="bg-white rounded shadow p-4">
-                    <iframe class="w-100 rounded mb-4" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.20358553266!2d107.59252760000001!3d-6.866190299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7ad402365e9%3A0x720f2e1a52359642!2sFakultas%20Teknik%20Unpas!5e0!3m2!1sen!2sid!4v1715686172804!5m2!1sen!2sid" loading="lazy"></iframe>
+                    <iframe class="w-100 rounded mb-4" height="320px"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.20358553266!2d107.59252760000001!3d-6.866190299999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7ad402365e9%3A0x720f2e1a52359642!2sFakultas%20Teknik%20Unpas!5e0!3m2!1sen!2sid!4v1715686172804!5m2!1sen!2sid"
+                        loading="lazy"></iframe>
                     <h5>Alamat</h5>
-                    <a class="d-inline-block text-decoration-none" href="https://maps.app.goo.gl/SKF4tPThakkmk1GW6" target="_blank">
+                    <a class="d-inline-block text-decoration-none" href="https://maps.app.goo.gl/SKF4tPThakkmk1GW6"
+                        target="_blank">
                         <p><i class="bi bi-geo-alt-fill"></i> Gegerkalong, Kec. Sukasari, Kota Bandung
                         </p>
                     </a>
@@ -43,7 +46,9 @@
                         <i class="bi bi-telephone-fill text-warning"></i> 081266058105
                     </a>
                     <h5 class="mt-4">Email</h5>
-                    <a href="mailto: ask.ck271138@gmail.com" class="d-inline-block mb-2 text-decoration-none text-dark"><i class="bi bi-envelope text-warning"></i> ck271138@gmail.com
+                    <a href="mailto: ask.ck271138@gmail.com"
+                        class="d-inline-block mb-2 text-decoration-none text-dark"><i
+                            class="bi bi-envelope text-warning"></i> ck271138@gmail.com
                     </a>
 
                     <h5 class="mt-4">Follow</h5>
@@ -69,21 +74,26 @@
                         <h5>Send a message</h5>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Name</label>
-                            <input name="name" required type="text" class="form-control shadow-none" placeholder="Your name">
+                            <input name="name" required type="text" class="form-control shadow-none"
+                                placeholder="Your name">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Email</label>
-                            <input name="email" required type="email" class="form-control shadow-none" placeholder="Your name">
+                            <input name="email" required type="email" class="form-control shadow-none"
+                                placeholder="Your name">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Subject</label>
-                            <input name="subject" required type="text" class="form-control shadow-none" placeholder="Your name">
+                            <input name="subject" required type="text" class="form-control shadow-none"
+                                placeholder="Your name">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" style="font-weight: 500;">Message</label>
-                            <textarea name="message" required class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
+                            <textarea name="message" required class="form-control shadow-none" rows="5"
+                                style="resize: none;"></textarea>
                         </div>
-                        <button type="submit" name="send" class="btn custom-bg btn-warning text-white shadow-none">Send</button>
+                        <button type="submit" name="send"
+                            class="btn custom-bg btn-warning text-white shadow-none">Send</button>
                     </form>
                 </div>
             </div>
@@ -108,6 +118,12 @@
     }
 
     ?>
+
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
 
 
     <!-- Footer -->

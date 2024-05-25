@@ -30,8 +30,6 @@ function selectAll($table)
 }
 
 
-
-
 function select($sql, $values, $datatypes)
 {
     $con = $GLOBALS['con'];

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sport Zone | About</title>
+    <title>Sport Zone | Login</title>
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- Include Library -->
@@ -17,7 +17,7 @@
     <?php require('inc/header.php'); ?>
 
     <div class="my-5 px-4">
-        <h2 class="fw-bold text-center">About</h2>
+        <h2 class="fw-bold text-center">Login</h2>
         <div class="h-line bg-dark"></div>
         <p class="text-center mt-3">Lorem, i ipsum dolor sit amet consectetur adipisicing elit.
             In voluptate adipisci sequi voluptas <br> commodi saepenobis aperiam nam sunt numquam.
@@ -140,12 +140,6 @@
         },
     });
     </script>
-
-
-    <!-- JavaScript Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
 
     <!-- Footer -->
     <?php require('inc/footer.php'); ?>
