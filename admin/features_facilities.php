@@ -73,7 +73,7 @@ adminLogin();
             <div class="col-lg-10 ms-auto p-4 overflow-hidden">
                 <h3 class="mb-4">Kelebihan & Fasilitas</h3>
 
-                <!-- Carousel section -->
+                <!-- Kelebihan-->
                 <div class="card border-0 shadow-sm mb-4 z-2">
                     <div class="card-body">
 
@@ -103,6 +103,41 @@ adminLogin();
                         </div>
                     </div>
                 </div>
+
+
+                <!-- Fasilitas -->
+                <div class="card border-0 shadow-sm mb-4 z-2">
+                    <div class="card-body">
+
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="card-title m-0">Fasilitas</h5>
+                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#facility-s">
+                                <i class="bi bi-plus-square"></i> Add
+                            </button>
+                        </div>
+
+
+                        <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
+                            <table class="table table-hover border-2">
+                                <thead class="sticky-top table-dark">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Icon</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Deskripsi</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="facilities-data">
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -132,6 +167,34 @@ adminLogin();
         </div>
     </div>
 
+    <!-- Modal Facility -->
+    <div class="modal fade" id="facility-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+        aria-labelledby="general-sLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="facility_s_form">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add Fasilitas</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" name="feature_name" class="form-control shadow-none" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Picture</label>
+                            <input type="text" name="feature_name" class="form-control shadow-none" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn bg-secondary text-white shadow-none"
+                            data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn bg-dark text-white shadow-none">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <?php require('inc/scripts.php') ?>
 

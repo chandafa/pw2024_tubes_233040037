@@ -16,20 +16,19 @@
 
 <body>
     <?php
-    //menyertakan file program koneksi.php pada register
     require('koneksi.php');
-    //inisialisasi session
+    require('../admin/inc/essentials.php');
     session_start();
 
     $error = '';
     $validate = '';
-    if (isset($_SESSION['user'])) header('Location: index.php');
-    //mengecek apakah data username yang diinpukan user kosong atau tidak
-    if (isset($_POST['submit'])) {
 
-        // menghilangkan backshlases
+    if (isset($_SESSION['user'])) {
+        header('Location: index.php');
+    }
+
+    if (isset($_POST['submit'])) {
         $username = stripslashes($_POST['username']);
-        //cara sederhana mengamankan dari sql injection
         $username = mysqli_real_escape_string($con, $username);
         $name     = stripslashes($_POST['name']);
         $name     = mysqli_real_escape_string($con, $name);
@@ -39,51 +38,74 @@
         $password = mysqli_real_escape_string($con, $password);
         $repass   = stripslashes($_POST['repassword']);
         $repass   = mysqli_real_escape_string($con, $repass);
-        //cek apakah nilai yang diinputkan pada form ada yang kosong atau tidak
+
         if (!empty(trim($name)) && !empty(trim($username)) && !empty(trim($email)) && !empty(trim($password)) && !empty(trim($repass))) {
-            //mengecek apakah password yang diinputkan sama dengan re-password yang diinputkan kembali
             if ($password == $repass) {
-                //memanggil method cek_nama untuk mengecek apakah user sudah terdaftar atau belum
-                if (cek_nama($name, $con) == 0) {
-                    //hashing password sebelum disimpan didatabase
-                    $pass  = password_hash($password, PASSWORD_DEFAULT);
-                    //insert data ke database
-                    $query = "INSERT INTO users (username,name,email, password ) VALUES ('$username','$nama','$email','$pass')";
-                    $result   = mysqli_query($con, $query);
-                    //jika insert data berhasil maka akan diredirect ke halaman index.php serta menyimpan data username ke session
-                    if ($result) {
-                        $_SESSION['username'] = $username;
+                if (cek_nama($username, $con) == 0) {
+                    $pass = password_hash($password, PASSWORD_DEFAULT);
 
-                        header('Location: index.php');
+                    // Proses unggahan file
+                    if (isset($_FILES["foto"]) && $_FILES["foto"]["error"] == 0) {
+                        $target_dir = USERS_FOLDER;
+                        if (!file_exists($target_dir)) {
+                            mkdir($target_dir, 0777, true); // Buat direktori jika belum ada
+                        }
+                        $target_file = $target_dir . basename($_FILES["foto"]["name"]);
+                        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-                        //jika gagal maka akan menampilkan pesan error
+                        // Periksa apakah file adalah gambar asli atau tidak
+                        $check = getimagesize($_FILES["foto"]["tmp_name"]);
+                        if ($check !== false) {
+                            if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file)) {
+                                $foto = $target_file;
+
+                                $query = "INSERT INTO users (username, name, email, foto, password) VALUES ('$username', '$name', '$email', '$foto', '$pass')";
+                                $result = mysqli_query($con, $query);
+
+                                if ($result) {
+                                    $_SESSION['username'] = $username;
+                                    header('Location: index.php');
+                                } else {
+                                    $error = 'Register User Gagal !!';
+                                }
+                            } else {
+                                $error = 'Terjadi kesalahan saat mengunggah foto.';
+                            }
+                        } else {
+                            $error = 'File bukan gambar.';
+                        }
                     } else {
-                        $error =  'Register User Gagal !!';
+                        $error = 'Tidak ada foto yang diunggah atau terjadi kesalahan saat mengunggah.';
                     }
                 } else {
-                    $error =  'Username sudah terdaftar !!';
+                    $error = 'Username sudah terdaftar !!';
                 }
             } else {
                 $validate = 'Password tidak sama !!';
             }
         } else {
-            $error =  'Data tidak boleh kosong !!';
+            $error = 'Data tidak boleh kosong !!';
         }
     }
 
-    //fungsi untuk mengecek username apakah sudah terdaftar atau belum
     function cek_nama($username, $con)
     {
         $nama = mysqli_real_escape_string($con, $username);
         $query = "SELECT * FROM users WHERE username = '$nama'";
-        if ($result = mysqli_query($con, $query)) return mysqli_num_rows($result);
+        if ($result = mysqli_query($con, $query)) {
+            return mysqli_num_rows($result);
+        }
+        return 0;
     }
+
     ?>
+
+
     <section class="container-fluid mb-4">
         <!-- justify-content-center untuk mengatur posisi form agar berada di tengah-tengah -->
         <section class="row justify-content-center">
             <section class="col-12 col-sm-6 col-md-4">
-                <form class="form-container" action="register.php" method="POST">
+                <form class="form-container" action="register.php" method="POST" enctype="multipart/form-data">
                     <h4 class="text-center font-weight-bold"> Register </h4>
                     <?php if ($error != '') { ?>
                     <div class="alert alert-danger" role="alert"><?= $error; ?></div>
@@ -102,6 +124,10 @@
                         <label for="username">Username</label>
                         <input type="text" class="form-control" id="username" name="username"
                             placeholder="Masukkan username">
+                    </div>
+                    <div class="form-group">
+                        <label for="foto">Profile</label>
+                        <input type="file" class="form-control" id="foto" name="foto" placeholder="Masukkan profile">
                     </div>
                     <div class="form-group">
                         <label for="InputPassword">Password</label>

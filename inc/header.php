@@ -186,10 +186,16 @@ require('user/login.php');
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ...
+                <div class="container">
+
+                    <div class="form-group">
+                        <input type="text" id="search" class="form-control" placeholder="Search...">
+                    </div>
+                    <ul class="list-group" id="result"></ul>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-warning text-white" data-bs-dismiss="modal">Close</button>
+
                 <button type="button" class="btn btn-outline-warning shadow-none">Search</button>
             </div>
         </div>

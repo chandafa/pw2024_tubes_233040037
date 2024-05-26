@@ -1,5 +1,6 @@
 <?php
 
+require('inc/db_config.php');
 require('inc/essentials.php');
 adminLogin();
 
@@ -31,7 +32,8 @@ adminLogin();
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <h5 class="card-title m-0">General Settings</h5>
-                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#general-s">
+                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#general-s">
                                 <i class="bi bi-pencil-square"></i> Edit
                             </button>
                         </div>
@@ -43,7 +45,8 @@ adminLogin();
                 </div>
 
                 <!-- Modal Settings-->
-                <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="general-sLabel" aria-hidden="true">
+                <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+                    aria-labelledby="general-sLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <form>
                             <div class="modal-content">
@@ -53,16 +56,21 @@ adminLogin();
                                 <div class="modal-body">
                                     <div class="mb-3">
                                         <label class="form-label">Site Title</label>
-                                        <input type="text" name="site_title" id="site_title_inp" class="form-control" shadow-none>
+                                        <input type="text" name="site_title" id="site_title_inp" class="form-control"
+                                            shadow-none>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">About us</label>
-                                        <textarea name="site_about" id="site_about_inp" class="form-control" rows="6" shadow-none></textarea>
+                                        <textarea name="site_about" id="site_about_inp" class="form-control" rows="6"
+                                            shadow-none></textarea>
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" onclick="site_title.value = general_data.site_title, site_about.value = general_data.site_about" class="btn btn-secondary shadow-none" data-bs-dismiss="modal">Batal</button>
-                                    <button type="button" onclick="upd_general(site_title.value, site_about.value)" class="btn bg-dark text-white shadow-none">Simpan</button>
+                                    <button type="button"
+                                        onclick="site_title.value = general_data.site_title, site_about.value = general_data.site_about"
+                                        class="btn btn-secondary shadow-none" data-bs-dismiss="modal">Batal</button>
+                                    <button type="button" onclick="upd_general(site_title.value, site_about.value)"
+                                        class="btn bg-dark text-white shadow-none">Simpan</button>
                                 </div>
                             </div>
                         </form>
@@ -76,7 +84,8 @@ adminLogin();
                             <h5 class="card-title m-0">Shutdown Website</h5>
                             <div class="form-check form-switch">
                                 <form>
-                                    <input onchange="upd_shutdown(this.value)" class="form-check-input" type="checkbox" id="shutdown-toggle">
+                                    <input onchange="upd_shutdown(this.value)" class="form-check-input" type="checkbox"
+                                        id="shutdown-toggle">
                                 </form>
                             </div>
 

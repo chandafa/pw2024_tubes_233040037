@@ -93,6 +93,29 @@ var swiper = new Swiper(".swiper-testimonials", {
 
 
     <script>
+$(document).ready(function() {
+    $('#search').on('keyup', function() {
+        var query = $(this).val();
+        if (query.length > 2) {
+            $.ajax({
+                url: 'search.php',
+                method: 'POST',
+                data: {
+                    query: query
+                },
+                success: function(data) {
+                    $('#result').html(data);
+                }
+            });
+        } else {
+            $('#result').html('');
+        }
+    });
+});
+
+
+
+
 function alert(type, msg, position = 'body') {
     let bs_class = (type == 'success') ? 'alert-success' : 'alert-danger';
     let element = document.createElement('div');

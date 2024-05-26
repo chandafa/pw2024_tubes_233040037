@@ -36,6 +36,7 @@ define('ABOUT_FOLDER', 'about/');
 define('CAROUSEL_FOLDER', 'carousel/');
 define('USERS_FOLDER', 'users/');
 
+
 function adminLogin()
 {
     session_start();
