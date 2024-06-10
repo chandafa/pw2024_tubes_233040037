@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+include 'config.php';
+
+// Pagination settings
+$records_per_page = 3;
+$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
+
+// Calculate the starting record for the query
+$start_from = ($page - 1) * $records_per_page;
+
+$query = mysqli_query($connect, "SELECT * FROM tbl_barang ORDER BY id ASC LIMIT $start_from, $records_per_page");
+
+if (!$query) {
+    die("Query gagal: " . mysqli_error($connect));
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,24 +38,26 @@
     <div class="my-5 px-4">
         <h2 class="fw-bold text-center">About</h2>
         <div class="h-line bg-dark"></div>
-        <p class="text-center mt-3">Lorem, i ipsum dolor sit amet consectetur adipisicing elit.
+        <p class="text-center mt-3">Lorem, ai ipsum dolor sit amet consectetur adipisicing elit.
             In voluptate adipisci sequi voluptas <br> commodi saepenobis aperiam nam sunt numquam.
         </p>
     </div>
 
     <div class="container">
-        <div class="row justify-content-between align-items-center">
+        <div class="row justify-content-center align-items-center">
             <div class="col-lg-6 col-md-5 mb-4 order-lg-1 order-md-1 order-2">
-                <h3 class="mb-3">
-                    Lorem ipsum dolor sit.
+                <h3 class="mb-3 fw-bold fs-4">
+                    Sport Zone | Penyewaan Alat Olahraga
+
                 </h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla dolorum totam fugiat. Omnis, quam!
-                    Animi, eveniet excepturi? Officia, officiis blanditiis! Lorem ipsum dolor sit amet.
+                    Selamat datang di Sport Zone, tempat terbaik untuk menyewa berbagai macam alat olahraga berkualitas.
+                    Kami memahami betapa pentingnya aktivitas fisik dalam menjaga kesehatan dan kebugaran Anda. Oleh
+                    karena itu, kami menyediakan beragam peralatan olahraga yang dapat Anda sewa dengan mudah dan cepat.
                 </p>
             </div>
             <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">
-                <img src="images/about/about.jpg" class="w-100">
+                <img src="assets/img/logo.png" width="50%" class="rounded-4">
             </div>
         </div>
     </div>
@@ -45,67 +66,35 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/features/lapangan.png" width="70px">
-                    <h4 class="mt-3">100+ Lapangan</h4>
+                    <i class="bi bi-gear fs-4"></i>
+                    <h4 class="mt-3">200+ Alat</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/features/lapangan.png" width="70px">
+                    <i class="bi bi-people fs-4"></i>
+
                     <h4 class="mt-3">200+ Customer</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/features/lapangan.png" width="70px">
+                    <i class="bi bi-envelope-paper fs-4"></i>
+
                     <h4 class="mt-3">300+ Pesanan</h4>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-4 px-4">
                 <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-                    <img src="images/features/lapangan.png" width="70px">
+                    <i class="bi bi-stars fs-4"></i>
+
                     <h4 class="mt-3">500+ Riview</h4>
                 </div>
             </div>
         </div>
     </div>
 
-    <h3 class="my-5 fw-bold text-center">Team Sport Zone</h3>
 
-    <div class="container px-4">
-        <!-- Swiper -->
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper mb-5">
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/about.jpg" class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/about.jpg" class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/about.jpg" class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/about.jpg" class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/about.jpg" class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-                <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-                    <img src="images/about/about.jpg" class="w-100">
-                    <h5 class="mt-2">Random Name</h5>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </div>
-
-    <br><br><br>
     <br><br><br>
 
     <!-- Swiper JS -->

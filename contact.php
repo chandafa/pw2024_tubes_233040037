@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+include 'config.php';
+
+// Pagination settings
+$records_per_page = 3;
+$page = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
+
+// Calculate the starting record for the query
+$start_from = ($page - 1) * $records_per_page;
+
+$query = mysqli_query($connect, "SELECT * FROM tbl_barang ORDER BY id ASC LIMIT $start_from, $records_per_page");
+
+if (!$query) {
+    die("Query gagal: " . mysqli_error($connect));
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,32 +57,15 @@
                         <p><i class="bi bi-geo-alt-fill"></i> Gegerkalong, Kec. Sukasari, Kota Bandung
                         </p>
                     </a>
-                    <h5 class="mt-4">Kontak</h5>
+                    <h5 class="mt-2">Kontak</h5>
                     <a href="tel: +62895404418536" class="d-inline-block mb-2 text-decoration-none text-dark">
                         <i class="bi bi-telephone-fill text-warning"></i> 0895404418536
                     </a>
                     <br>
                     <a href="tel: +6281266058105" class="d-inline-block mb-2 text-decoration-none text-dark">
-                        <i class="bi bi-telephone-fill text-warning"></i> 081266058105
-                    </a>
-                    <h5 class="mt-4">Email</h5>
-                    <a href="mailto: ask.ck271138@gmail.com"
-                        class="d-inline-block mb-2 text-decoration-none text-dark"><i
-                            class="bi bi-envelope text-warning"></i> ck271138@gmail.com
+                        <i class="bi bi-envelope-fill text-warning"></i> ck271138@gmail.com
                     </a>
 
-                    <h5 class="mt-4">Follow</h5>
-                    <a href="#" class="d-inline-block fs-5 me-2">
-                        <i class="bi bi-twitter-x me-1 text-warning"></i>
-                    </a>
-
-                    <a href="#" class="d-inline-block fs-5 me-2">
-                        <i class="bi bi-instagram me-1 text-warning"></i>
-                    </a>
-
-                    <a href="#" class="d-inline-block fs-5">
-                        <i class="bi bi-facebook me-1 text-warning"></i>
-                    </a>
 
                 </div>
             </div>
