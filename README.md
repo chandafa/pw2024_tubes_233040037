@@ -22,6 +22,40 @@
 
 Ini tugas besar pemograman web by candra kirana (233040037)
 
+## Login admin
+    username : bener
+    password : bener
+
+## Login User
+    username : can
+    password : can
+
+
+## Fitur
+    1. CRUD admin
+    2. CRU  user
+    3. Live Search
+    4. Pemberitahuan
+    5. Sorting
+    6. Responsive
+    7. PDF Reporting
+    8. Login User/Admin
+    9. Dashboard Admin
+    10. Pagenation
+    11. Go to Top
+    12. Detail Card
+    13. Relasi 2 Table
+    14. Registrasi User
+    15. Cookie login
+
+
+## Tech
+    1. PHP
+    2. HTML
+    3. Javascript
+    4. Bootstrap
+    5. Swiper JS
+
 ## 🏁 Demo Website <a name = "demo"></a>
 
 ## Link Utama :
