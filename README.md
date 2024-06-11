@@ -55,6 +55,7 @@ Ini tugas besar pemograman web by candra kirana (233040037)
     3. Javascript
     4. Bootstrap
     5. Swiper JS
+    6. AJAX
 
 ## 🏁 Demo Website <a name = "demo"></a>
 
