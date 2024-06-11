@@ -43,12 +43,15 @@ Ini tugas besar pemograman web by candra kirana (233040037)
     9. Dashboard Admin/User
     10. Pagenation
     11. Go to Top
-    12. Detail Card
+    12. Detail Produk
     13. Relasi 2 Table
     14. Registrasi User
     15. Cookie login
     16. Logout Admin/User
     17. Mengurutkan data sesuai ID
+    18. Profile User
+    19. Form Kontak
+    20. Validasi User
 
 
 ## Tech
