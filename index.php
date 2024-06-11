@@ -156,17 +156,15 @@ if (!$query) {
 
                         <div class="facilities mb-4">
                             <h6 class="mb-1">Benefit</h6>
+                            
                             <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
-                                Lapangan Tenis
+                                Card Member
                             </span>
                             <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
-                                Stock bola
+                                Berkualitas
                             </span>
                             <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
-                                Balkon
-                            </span>
-                            <span class="badge rounded-pill bg-warning text-dark text-wrap lh-base">
-                                Wifi
+                                Terjangkau
                             </span>
 
                         </div>
