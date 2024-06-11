@@ -40,13 +40,15 @@ Ini tugas besar pemograman web by candra kirana (233040037)
     6. Responsive
     7. PDF Reporting
     8. Login User/Admin
-    9. Dashboard Admin
+    9. Dashboard Admin/User
     10. Pagenation
     11. Go to Top
     12. Detail Card
     13. Relasi 2 Table
     14. Registrasi User
     15. Cookie login
+    16. Logout Admin/User
+    17. Mengurutkan data sesuai ID
 
 
 ## Tech
