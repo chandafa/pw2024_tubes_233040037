@@ -64,10 +64,7 @@ Ini tugas besar pemograman web by candra kirana (233040037)
 
 ## 🏁 Demo Website <a name = "demo"></a>
 
-## Link Utama :
 
-### https://sportzoneid.sistemalumnitkj.my.id
-
-## Link Backup :
+## Link Demo :
 
 ### https://sportzoneck.000webhostapp.com
