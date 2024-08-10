@@ -27,8 +27,8 @@ Ini tugas besar pemograman web by candra kirana (233040037)
     password : bener
 
 ## Login User
-    username : can1
-    password : can1
+    username : test    
+    password : test
 
 
 ## Fitur
