@@ -23,11 +23,11 @@
 Ini tugas besar pemograman web by candra kirana (233040037)
 
 ## Login admin
-    email     : admin123@gmail.com
+    username  : admin123
     password  : password
 
 ## Login User
-    email     : candra123@gmail.com
+    username  : candra123
     password  : password
 
 
@@ -67,4 +67,4 @@ Ini tugas besar pemograman web by candra kirana (233040037)
 
 ## Link Demo :
 
-### https://sportzoneck.000webhostapp.com
+### https://sportzone.projectchan.xyz/
