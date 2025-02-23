@@ -52,6 +52,7 @@ Ini tugas besar pemograman web by candra kirana (233040037)
     18. Profile User
     19. Form Kontak
     20. Validasi User
+    21. Midtrans Pembayaran
 
 
 ## Tech
