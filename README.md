@@ -23,12 +23,12 @@
 Ini tugas besar pemograman web by candra kirana (233040037)
 
 ## Login admin
-    username : bener
-    password : bener
+    email     : admin123@gmail.com
+    password  : password
 
 ## Login User
-    username : test    
-    password : test
+    email     : candra123@gmail.com
+    password  : password
 
 
 ## Fitur
